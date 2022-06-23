@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ready UP</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<style>
+			h1 {
+				float: left;
+				padding-right: 0;
+				padding-left: 0;
+			}
+			h1 a {
+				text-decoration: none;
+				color: black;
+				background-color: #FFFFFF;
+				padding: 14px 16px;
+				padding-top: 21px;
+				padding-bottom: 23px;
+			}
+			.topnav {
+				margin: 0;
+				padding: 0;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				overflow: hidden;
+				background-color: #1C89E6;
+			}
+			.topnav a {
+				float: left;	
+				display: block;
+				color: white;
+				text-align: center;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				padding-right: 70px;
+				padding-left: 70px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+			.topnav a:hover {
+				background-color: #0F1870;
+			}
+			.topnav a.active {
+				background-color: #0F1870;
+				color: white;
+			}
+			.topnav .login button {
+				float: right;
+				padding: 6px 10px;
+				margin-top: 8px;
+				margin-right: 16px;
+				background: #ddd;
+				font-size: 17px;
+				border: none;
+				cursor: pointer;
+			}
+			.topnav .login button:hover {
+				background: #ccc;
+			}
+			.topnav .login input[type=text], input[type=password] {
+  				width: 100%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				display: inline-block;
+  				border: 1px solid #ccc;
+  				box-sizing: border-box;
+			}
+			.topnav .login .cancelbtn {
+  				float: none;
+				width: auto;
+  				padding: 10px 18px;
+  				background-color: #f44336;
+			}
+			.topnav .login .container {
+ 				padding: 15px;
+			}
+			.topnav .login span.psw {
+  				float: right;
+  				padding-top: 16px;
+			}
+			.topnav .login .modal {
+  				display: none;
+  				position: fixed;
+  				z-index: 1;
+  				left: 0;
+  				top: 0;
+  				width: 100%; 
+  				height: 100%;
+  				overflow: auto;
+  				background-color: rgb(0,0,0); 
+  				background-color: rgba(0,0,0,0.4);
+  				padding-top: 60px;
+			}
+			.topnav .login .modal-content {
+  				background-color: #ffffff;
+  				margin: 5% auto 15% auto;
+  				border: 1px solid black;
+  				width: 80%;
+			}
+			.topnav .login .close {
+  				position: absolute;
+  				right: 25px;
+  				top: 0;
+  				color: #FFFFFF;
+  				font-size: 35px;
+  				font-weight: bold;
+				}
+			.topnav .login .close:hover, .close:focus {
+  				color: red;
+  				cursor: pointer;
+			}
+			.topnav .login .animate {
+  				-webkit-animation: animatezoom 0.6s;
+  				animation: animatezoom 0.6s
+			}
+			@-webkit-keyframes animatezoom {
+  				from {-webkit-transform: scale(0)} 
+  				to {-webkit-transform: scale(1)}
+			}
+  			@keyframes animatezoom {
+  				from {transform: scale(0)} 
+  				to {transform: scale(1)}
+			}
+			.topnav .signup button {
+				float: right;
+				padding: 6px 10px;
+				margin-top: 8px;
+				margin-right: 16px;
+				background: #ddd;
+				font-size: 17px;
+				border: none;
+				cursor: pointer;
+			}
+			.topnav .signup button:hover {
+				background: #ccc;
+			}
+			.topnav .signup input[type=text], input[type=password] {
+  				width: 100%;
+  				padding: 15px;
+  				margin: 5px 0 22px 0;
+  				display: inline-block;
+  				border: none;
+  				background: #f1f1f1;
+			}
+			.topnav .signup input[type=text]:focus, input[type=password]:focus {
+  				background-color: #ddd;
+  				outline: none;
+			}
+			.topnav .signup .cancelbtn {
+  				padding: 14px 20px;
+  				background-color: #f44336;
+				float: left;
+  				width: 40%;
+			}
+			.topnav .signup .signupbtn { 
+				padding: 14px 20px;
+				float: right;
+  				width: 40%;
+			}
+			.topnav .signup .container {
+  				padding: 16px;
+			}
+			.topnav .signup .modal {
+				display: none; 
+  				position: fixed;
+  				z-index: 1;
+  				left: 0;
+  				top: 0;
+  				width: 100%;
+  				height: 100%;
+  				overflow: auto;
+  				background-color: rgb(0,0,0); 
+  				background-color: rgba(0,0,0,0.4);
+  				padding-top: 50px;
+			}
+			.topnav .signup .modal-content {
+  				background-color: #FFFFFF;
+  				margin: 5% auto 15% auto;
+  				border: 1px solid black;
+  				width: 80%;
+			}
+			.topnav .signup hr {
+  				border: 1px solid #f1f1f1;
+  				margin-bottom: 25px;
+			}
+ 			.topnav .signup .close {
+  				position: absolute;
+  				right: 35px;
+  				top: 15px;
+  				font-size: 40px;
+  				font-weight: bold;
+  				color: #f1f1f1;
+			}
+			.topnav .signup .close:hover, .close:focus {
+  				color: #f44336;
+  				cursor: pointer;
+			}
+			.topnav .signup .clearfix::after {
+  				content: "";
+  				clear: both;
+  				display: table;
+			}
+			sidebar {
+				float: left;
+				width: 20%;
+				length: 100%;
+				margin: 0;
+				color: black;
+				background-color: #FFFFFF;
+				padding-top: 2px;
+				padding-bottom: 100px;
+				padding-right: 15px;
+				padding-left: 15px;
+				border: 4px solid #1C89E6;
+			}
+			.vertical-menu {
+ 				width: 100%;
+				height: 100%;
+				overflow-y: auto;
+			}
+			.vertical-menu a {
+				background-color: #A9A6A6;
+				color: white;
+				display: block;
+				padding: 12px;
+				text-decoration: none;
+				border: 1px solid black;
+				text-align: center;
+			}
+			.vertical-menu a:hover {
+				background-color: #ccc;
+			}
+
+			.vertical-menu a.active {
+				background-color: #000000;
+  				color: white;
+			}
+			article {
+				float: right;
+				width: 72%;
+				length: 100%;
+				margin: 0;
+				color: black;
+				background-color: #FFFFFF;
+				padding-top: 2px;
+				padding-bottom: 100px;
+				padding-right: 15px;
+				padding-left: 15px;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic1 {
+				float: left;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic1 .image1 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .pic2 {
+				float: right;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic2 .image2 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .pic3 {
+				float: left;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic3 .image3 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .vid1 {
+				float: right;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic5 {
+				float: left;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic5 .image5 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .vid2 {
+				float: right;
+				width: 40%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic1 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic1 .image1 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .pic2 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic2 .image2 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .pic3 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic3 .image3 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .vid1 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic5 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+			.images .pic5 .image5 {
+				float: none;
+				width: 100%; 
+				height: 100%;
+			}
+			.images .vid2 {
+				float: left;
+				width: 80%;
+				margin-left: 10%; 
+				height: 100%;
+				color: black;
+				background-color: #FFFFFF;
+				border: 4px solid #1C89E6;
+			}
+
+			@media screen and (max-width: 1245px) {
+				article {
+					float: right;
+					width: 72%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+			}
+			@media screen and (max-width: 990px) {
+				h1 {
+					float: none;
+				}
+				h1 a {
+					float: none;
+					display: block;
+					text-align: center;
+					width: 96%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav a {
+					float: none;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				} 
+				.topnav .login button {
+					float: left;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav .signup button {
+					float: right;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				sidebar {
+					float: left;
+					width: 96%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.vertical-menu {
+ 					width: 100%;
+					height: 100%;
+					overflow-y: auto;
+				}
+				.vertical-menu a {
+					background-color: #A9A6A6;
+					color: white;
+					display: block;
+					padding: 12px;
+					text-decoration: none;
+					border: 1px solid black;
+					text-align: center;
+				}
+				.vertical-menu a:hover {
+					background-color: #ccc;
+				}
+				.vertical-menu a.active {
+					background-color: #000000;
+  					color: white;
+				}
+				article {
+					float: left;
+					width: 96%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 .image1 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic2 .image2 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic3 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic3 .image3 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 .image5 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+			}
+			@media screen and (max-width: 790px) {
+				h1 {
+					float: none;
+				}
+				h1 a {
+					float: none;
+					display: block;
+					text-align: center;
+					width: 93.5%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav a {
+					float: none;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				} 
+				.topnav .login button {
+					float: left;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav .signup button {
+					float: right;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				sidebar {
+					float: left;
+					width: 92%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.vertical-menu {
+ 					width: 100%;
+					height: 100%;
+					overflow-y: auto;
+				}
+				.vertical-menu a {
+					background-color: #A9A6A6;
+					color: white;
+					display: block;
+					padding: 12px;
+					text-decoration: none;
+					border: 1px solid black;
+					text-align: center;
+				}
+				.vertical-menu a:hover {
+					background-color: #ccc;
+				}
+				.vertical-menu a.active {
+					background-color: #000000;
+  					color: white;
+				}
+				article {
+					float: left;
+					width: 92%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 .image1 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic2 .image2 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic3 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic3 .image3 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 .image5 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				h1 {
+					float: none;
+				}
+				h1 a {
+					float: none;
+					display: block;
+					text-align: center;
+					width: 89%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav a {
+					float: none;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				} 
+				.topnav .login button {
+					float: left;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				.topnav .signup button {
+					float: right;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
+				sidebar {
+					float: left;
+					width: 87%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.vertical-menu {
+ 					width: 100%;
+					height: 100%;
+					overflow-y: auto;
+				}
+				.vertical-menu a {
+					background-color: #A9A6A6;
+					color: white;
+					display: block;
+					padding: 12px;
+					text-decoration: none;
+					border: 1px solid black;
+					text-align: center;
+				}
+				.vertical-menu a:hover {
+					background-color: #ccc;
+				}
+				.vertical-menu a.active {
+					background-color: #000000;
+  					color: white;
+				}
+				article {
+					float: left;
+					width: 87%;
+					length: 100%;
+					margin-bottom: 15px;
+					color: black;
+					background-color: #FFFFFF;
+					padding-top: 2px;
+					padding-bottom: 100px;
+					padding-right: 15px;
+					padding-left: 15px;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic1 .image1 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic2 .image2 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .pic3 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic3 .image3 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid1 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+				.images .pic5 .image5 {
+					float: none;
+					width: 100%; 
+					height: 100%;
+				}
+				.images .vid2 {
+					float: left;
+					width: 80%;
+					margin-left: 10%; 
+					height: 100%;
+					color: black;
+					background-color: #FFFFFF;
+					border: 4px solid #1C89E6;
+				}
+			}
+			@media screen and (max-width: 300px) {
+  				span.psw {
+     					display: block;
+     					float: none;
+  				}
+  				.cancelbtn {
+     					width: 100%;
+ 			 	}
+				.cancelbtn, .signupbtn {
+    					width: 100%;
+  				}
+			}
+		</style>		
+	</head>
+	<body style="background-color: black;">
+		<h1><a href="WebDevWebsite/Home/home.html">READY UP</a></h1>
+	
+		<div class="topnav">
+			<a href="WebDevWebsite/Home/home.html">Home</a>
+			<a href="WebDevWebsite/Profile/profile.html">Profile</a>
+			<a class="active" href="WebDevWebsite/Social/social.html">Social</a>
+			<a href="WebDevWebsite/Developer/developer.html">Developer</a>
+			<a href="WebDevWebsite/Contact/contact.html">Contact</a>
+			<div class="login">
+				<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+				<div id="id01" class="modal">
+  					<form class="modal-content animate" action="/action_page.php" method="post">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    						</div>
+    						<div class="container">
+     					 		<label for="uname"><b>Username</b></label>
+      							<input type="text" placeholder="Enter Username" name="uname" required>
+						
+							<label for="psw"><b>Password</b></label>
+     							<input type="password" placeholder="Enter Password" name="psw" required>
+      
+							<button type="submit">Login</button>
+      							<label>
+        							<input type="checkbox" checked="checked" name="remember"> Remember me
+     							</label>
+   						 </div>
+						 <div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    						</div>
+  					</form>
+				</div>
+			</div>
+			<div class="signup">
+				<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup</button>
+				<div id="id02" class="modal">
+ 					<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  					<form class="modal-content" action="/action_page.php">
+   						<div class="container">
+      							<h1 style="float: none;">Sign Up</h1>
+
+      							<label for="email"><b>Email</b></label>
+      							<input type="text" style="width: 97%;" placeholder="Enter Email" name="email" required>
+
+      							<label for="psw"><b>Password</b></label>
+      							<input type="password" placeholder="Enter Password" name="psw" required>
+
+      							<label for="psw-repeat"><b>Repeat Password</b></label>
+      							<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      							<label>
+        							<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      							</label>
+
+      							<div class="clearfix">
+        							<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        							<button type="submit" class="signupbtn">Sign Up</button>
+      							</div>
+    						</div>
+  					</form>
+				</div>
+
+			</div>
+		</div>
+	<br><br>
+		<sidebar>
+			<h3 style="text-align: center;">Upload Your Content</h3>
+			<p style="text-align: center;"><input type="file" size="30"></p>
+			<p class="submit">
+				<input type="submit" style="height: 3em; width: 20em;" value="Submit">
+			</p>
+			<h3 style="text-align:center;">Browse Content</h3>
+				<div class="vertical-menu">
+					<a href="WebDevWebsite/Social/social.html">HOME</a>
+					<a href="WebDevWebsite/Social/subpages/social_trending.html">TRENDING</a>
+					<a href="WebDevWebsite/Social/subpages/social_fresh.html">FRESH</a>
+					<a href="WebDevWebsite/Social/subpages/social_following.html" class="active">FOLLOWING</a>
+				</div>	
+		</sidebar>
+		<article>
+			<h2 style="text-align: center;">FOLLOWING</h2>
+			<div class="images">
+				<figure class="pic1">
+					<img src="http://barr111.myweb.cs.uwindsor.ca/comp2707/assignments/final_project/images/sif_meme.jpg" alt="sif_meme" title="Sif Meme" class="image1">
+					<b>
+					<figcaption style="text-align: center;">Poor Doggo :(</figcaption>
+				<br>
+					<a href="WebDevWebsite/Profile/profile_MadeUpUser.html" style="float: left; color: black; text-decoration: none;">Shared By: MadeUpUser</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+				<figure class="pic2">
+					<img src="http://barr111.myweb.cs.uwindsor.ca/comp2707/assignments/final_project/images/sid_meme.jpg" alt="sid_meme" title="Sid Meme" class="image2">
+					<b>
+					<figcaption style="text-align: center;">OH GOD NO!!!</figcaption>
+				<br>
+					<a href="WebDevWebsite/Profile/profile_FakeUser.html" style="float: left; color: black; text-decoration: none;">Shared By: FakeUser</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+			<br>
+				<figure class="pic3">
+					<img src="http://barr111.myweb.cs.uwindsor.ca/comp2707/assignments/final_project/images/custom_character_meme.jpg" alt="custom_character_meme" title="Custom Character Meme" class="image3">
+					<b>
+					<figcaption style="text-align: center;">This is literally the best thing in videogames.</figcaption>
+				<br>
+					<a href="WebDevWebsite/Profile/profile_ImNotReal.html" style="float: left; color: black; text-decoration: none;">Shared By: ImNotReal</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+				<figure class="vid1">
+					<iframe width="99%" height="345" src="https://www.youtube.com/embed/FBiUmEUDe4I"></iframe>
+					<b>
+					<figcaption style="text-align: center;">Somthing funny to get you through quarentine.</figcaption>
+				<br>
+					<a href="WebDevWebsite/Profile/profile_PlaceholderUser.html" style="float: left; color: black; text-decoration: none;">Shared By: PlaceholderUser</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+			<br>
+				<figure class="pic5">
+					<img src="http://barr111.myweb.cs.uwindsor.ca/comp2707/assignments/final_project/images/monitor_meme.jpg" alt="monitor_meme" title="Monitor Meme" class="image5">
+					<b>
+					<figcaption style="text-align: center;">Get on my level bro.</figcaption>
+				<br>
+					<a href="WebDevWebsite/Profile/profile_MadeUpUser.html" style="float: left; color: black; text-decoration: none;">Shared By: MadeUpUser</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+				<figure class="vid2">
+					<iframe width="99%" height="345" src="https://www.youtube.com/embed/i2nuHEGhwiw"></iframe>
+					<b>
+					<figcaption style="text-align: center;">So excited for this to come to Pc!!.</figcaption>
+				<br>
+					<a href="Profile/profile_FakeNewsUser.html" style="float: left; color: black; text-decoration: none;">Shared By: FakeNewsUser</a>
+					<p style="float: right; margin-right: 10px;">0 likes</p>
+					</b>
+				</figure>
+			</div>
+		</article>
+		<footer style=" float:left; width: 100%; background-color: #1C89E6; color: white; text-align: center;">
+  		<p>&copy; 2020, READY UP</p>
+		</footer>
+	</body>
+</html>
